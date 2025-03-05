@@ -21,7 +21,7 @@ target:
 	$(OBJCOPY) -O binary -F elf32-littlearm $(TARGET).elf $(TARGET).bin
 
 qemu:
-	$(QEMU) --verbose --verbose --board $(BOARD) --mcu $(MCU) -d unimp,guest_errors --image $(TARGET).bin --semihosting-config enable=on,target=native -gdb tcp::$(TCP_ADDR) -S -nographic
+	$(QEMU) --verbose --verbose --board $(BOARD) --mcu $(MCU) -d unimp,guest_errors --image $(TARGET).bin --semihosting-config enable=on,target=native -gdb tcp::$(TCP_ADDR) -S
 
 clean:
 	-rm -f *.o *.elf *.bin
